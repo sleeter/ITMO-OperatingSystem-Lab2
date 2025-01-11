@@ -67,7 +67,7 @@ char* allocate_aligned_buffer() {
 }
 
 int lab2_open(const char* path, const int flags, const mode_t mode) {
-    const int fd = open(path, flags | O_DIRECT, mode);
+    const int fd = open(path, flags | O_SYNC, mode);
     if (fd < 0) {
         perror("open");
         return -1;
